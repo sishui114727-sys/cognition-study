@@ -1,7 +1,7 @@
 # cognition-study · 学习管线
 
-**下载：[`cognition-study-0.3.1-community.zip`](cognition-study-0.3.1-community.zip)**（混淆版，114KB） · 版本 `0.3.1` ·
-文档在 [`docs/`](docs/)，源码不公开。
+**下载：[`cognition-study-0.3.1-community.zip`](cognition-study-0.3.1-community.zip)**（混淆版） · 版本 `0.3.1` ·
+文档在 [`docs/`](docs/)，**完整发布声明见 [`docs/发布声明.md`](docs/发布声明.md)**，源码不公开。
 
 ---
 
