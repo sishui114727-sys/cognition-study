@@ -29,6 +29,13 @@
 - 删掉 `docs/发布说明-0.3.0.md`——同一件事写两份，迟早对不上（它里面的内容已并入，git 里有历史）。
 - `docs/发布说明-0.3.1.md` 保留为 GitHub Release 的版本说明。
 
+### 构建：包名不再撞车
+
+- `scripts/build-dist.mjs` 原来也产一份 `-community.zip`（**明文**），和 `scripts/build-github.mjs`
+  出的混淆版同名。两个文件同名、体积差一倍，发布时贴错链接就等于把源码散出去。
+- 现在分工写死：`-community.zip` 只由 `build-github.mjs` 出（混淆，发布用）；
+  `build-dist.mjs` 出 `-dev.zip`（明文 + 文档，自查用）和完整包（源码 + test + scripts）。
+
 ---
 
 ## 0.3.0 — 2026-10-31
