@@ -1,0 +1,13 @@
+{
+  "name": "cognition-study",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "description": "B站学习管线与手账（QQ Agent 可选插件）",
+  "main": "index.js",
+  "scripts": {
+    "test": "node scripts/test.mjs",
+    "build": "node scripts/build-dist.mjs"
+  }
+}

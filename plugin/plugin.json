@@ -1,0 +1,91 @@
+{
+  "id": "cognition-study",
+  "name": "学习管线",
+  "version": "0.3.1",
+  "apiVersion": 1,
+  "category": "knowledge",
+  "description": "可选插件：把 B 站视频的稿子取下来、整理成简报、写成手账，供回忆与检索。不并入认知核心，独立开关、独立数据。",
+  "author": "似水未来",
+  "enabledByDefault": false,
+  "capabilities": [],
+  "requires": [],
+  "permissions": [],
+  "settings": {
+    "enabled": false,
+    "ownerId": "",
+    "sessdata": "",
+    "learnOnLink": false,
+    "dailyJournalLimit": 2,
+    "maxJournalCharsPerDay": 6000,
+    "maxDurationSec": 3600,
+    "maxFetchPerDay": 6,
+    "keepRawSubtitle": true
+  },
+  "configSchema": {
+    "overview": {
+      "type": "action",
+      "label": "学习手账面板",
+      "button": "打开面板",
+      "panel": "panel/overview.html",
+      "description": "只读总览：稿件数、手账卷、今日额度、最近错误。修改请用本插件的设置表单。"
+    },
+    "enabled": {
+      "type": "boolean",
+      "label": "启用学习管线",
+      "default": false,
+      "description": "关闭时不抓取、不写手账，已有数据保留可读。"
+    },
+    "ownerId": {
+      "type": "string",
+      "label": "主人 QQ 号",
+      "description": "只用于 owner-only 判定。留空表示未绑定，所有工具拒绝执行。"
+    },
+    "sessdata": {
+      "type": "string",
+      "label": "B站 SESSDATA（可选）",
+      "description": "只存本地、只发给 bilibili.com 域。填了才能拿到字幕稿；不填只能读到简介与分P信息，手账会标注「仅元信息」。"
+    },
+    "learnOnLink": {
+      "type": "boolean",
+      "label": "主人发链接时自动提示学习（默认关）",
+      "default": false,
+      "description": "打开后，只有主人私聊里出现 B站 链接时，才在消息尾部加一行提示（不下载、不改系统提示）。群聊与其他人一律不触发。"
+    },
+    "dailyJournalLimit": {
+      "type": "number",
+      "label": "每天最多新建手账",
+      "default": 2,
+      "description": "按账本统计，重启不重置。已达上限时新建会被明确拒绝，读取不受影响。"
+    },
+    "maxJournalCharsPerDay": {
+      "type": "number",
+      "label": "每天手账字数上限",
+      "default": 6000,
+      "description": "篇数之外的第二道闸：防止一天两篇但每篇八千字。修订不占额度。"
+    },
+    "maxDurationSec": {
+      "type": "number",
+      "label": "单次取稿时长上限（秒）",
+      "default": 3600,
+      "description": "默认 1 小时。超过则拒绝取稿并提示，不做自动分段。"
+    },
+    "maxFetchPerDay": {
+      "type": "number",
+      "label": "每天最多取稿次数",
+      "default": 6,
+      "description": "防止一次会话里把整页视频都取下来。"
+    },
+    "keepRawSubtitle": {
+      "type": "boolean",
+      "label": "保留原始字幕正文",
+      "default": true,
+      "description": "关闭后只留简报与手账，原始字幕分段不再落盘（省空间，但无法回溯原话）。"
+    },
+    "timeZone": {
+      "type": "string",
+      "label": "时区",
+      "default": "Asia/Shanghai",
+      "description": "手账按这个时区的自然日分篇、计算额度。"
+    }
+  }
+}

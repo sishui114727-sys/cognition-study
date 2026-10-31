@@ -1,0 +1,79 @@
+:root {
+  --bg: #0f1319;
+  --panel: #161c25;
+  --line: #232c38;
+  --text: #e6edf6;
+  --muted: #8a97a8;
+  --ok: #4ec9a0;
+  --warn: #e0a44a;
+  --bad: #e06c6c;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 24px 16px 40px;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.6 "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+}
+
+.wrap { max-width: 880px; margin: 0 auto; }
+
+.head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+h1 { margin: 0 0 4px; font-size: 20px; font-weight: 600; }
+h2 { margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--muted); letter-spacing: .04em; text-transform: uppercase; }
+.sub { margin: 0; color: var(--muted); font-size: 13px; }
+
+.badge {
+  flex: none;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.badge[data-state="ok"] { color: var(--ok); border-color: #24503f; }
+.badge[data-state="warn"] { color: var(--warn); border-color: #4a3a1c; }
+.badge[data-state="bad"] { color: var(--bad); border-color: #4a2424; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.card, .block {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.card .value { margin: 0; font-size: 26px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.hint { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+
+.block { margin-bottom: 12px; }
+.line { margin: 0 0 6px; }
+.muted { color: var(--muted); font-size: 13px; }
+.muted li { margin-bottom: 4px; }
+ul { margin: 0; padding-left: 18px; }
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 12px;
+}

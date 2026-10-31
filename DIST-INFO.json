@@ -1,0 +1,11 @@
+{
+  "version": "0.3.1",
+  "builtAt": "2026-10-31T16:38:28.280Z",
+  "obfuscatedFiles": 10,
+  "sourceBytes": 93052,
+  "community": {
+    "name": "cognition-study-0.3.1-community.zip",
+    "bytes": 117238,
+    "sha256": "e614858af5f86bcd43fbaee860314c07730e2cabb12694f279b98227e6e451a5"
+  }
+}

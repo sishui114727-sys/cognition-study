@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>学习管线 · 手账面板</title>
+  <link rel="stylesheet" href="overview.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="head">
+      <div>
+        <h1>学习管线</h1>
+        <p class="sub">B站取稿 → 简报 → 手账 / 札记。只读面板，不提供任何修改入口。</p>
+      </div>
+      <div class="badge" id="state-badge" data-state="loading">读取中</div>
+    </header>
+
+    <section class="cards" id="cards">
+      <article class="card">
+        <h2>稿件</h2>
+        <p class="value" id="readings-total">—</p>
+        <p class="hint" id="readings-hint">尚未取稿</p>
+      </article>
+      <article class="card">
+        <h2>今日取稿</h2>
+        <p class="value" id="fetch-today">—</p>
+        <p class="hint" id="fetch-hint">上限 —</p>
+      </article>
+      <article class="card">
+        <h2>手账</h2>
+        <p class="value" id="journal-total">—</p>
+        <p class="hint" id="journal-hint">今日 0 / 上限 2</p>
+      </article>
+      <article class="card">
+        <h2>连续写作</h2>
+        <p class="value" id="journal-streak">—</p>
+        <p class="hint" id="journal-streak-hint">按自然日连续计</p>
+      </article>
+      <article class="card">
+        <h2>今日字数</h2>
+        <p class="value" id="journal-chars">—</p>
+        <p class="hint" id="journal-chars-hint">上限 —</p>
+      </article>
+      <article class="card">
+        <h2>札记</h2>
+        <p class="value" id="notes-total">—</p>
+        <p class="hint">碎片记录，可带标签检索</p>
+      </article>
+      <article class="card">
+        <h2>字幕能力</h2>
+        <p class="value" id="sessdata-state">—</p>
+        <p class="hint">没有 SESSDATA 时只能读简介</p>
+      </article>
+    </section>
+
+    <section class="block">
+      <h2>手账校验</h2>
+      <p class="line" id="verify-line">—</p>
+      <p class="hint">索引、账本、分卷必须三者一致；不一致时这里会列出具体问题。</p>
+      <p class="line muted" id="journal-extra">—</p>
+    </section>
+
+    <section class="block">
+      <h2>最近一次动作</h2>
+      <p class="line" id="last-fetch">还没有取过稿</p>
+      <p class="line muted" id="last-error"></p>
+    </section>
+
+    <section class="block">
+      <h2>这份面板不显示什么</h2>
+      <ul class="muted">
+        <li>不显示手账正文——正文只通过工具按卷读取，避免面板变成第二份数据副本。</li>
+        <li>不显示 SESSDATA——只显示"有 / 没有"。</li>
+        <li>不显示稿件原始字幕——那是每篇几万字的正文，面板只给计数。</li>
+      </ul>
+    </section>
+
+    <footer class="foot">
+      <span id="generated-at">—</span>
+      <span>数据文件：plugin-data/cognition-study</span>
+    </footer>
+  </main>
+  <script src="overview.js"></script>
+</body>
+</html>
